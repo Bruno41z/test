@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<style>
+#div {
+    background-color:darkblue;
+    height:100px;
+    width:100px;
+    transition: 1S;
+    z-index: 2;
+}
+
+#div2 {
+
+
+font-size:300px;
+position:absolute;
+top:30%;
+left:45%;
+color:gray;
+z-index: -1;
+}
+
+</style>
+
+<script>
+
+let suma=0;
+
+function pokaz() {
+
+let x=Math.floor(Math.random()*1000)+1;
+let y=Math.floor(Math.random()*800)+1;
+
+
+document.getElementById("div").style.transform="translate("+x+"px,"+y+"px)";
+
+let r=Math.floor(Math.random()*255)+0;
+let g=Math.floor(Math.random()*255)+0;
+let b=Math.floor(Math.random()*255)+0;
+
+let radius=Math.floor(Math.random()*100)+10;
+
+document.getElementById("div").style.backgroundColor="rgb("+r+","+g+","+b+")";
+
+document.getElementById("div").style.borderRadius=radius+"px";
+
+suma++;
+
+document.getElementById("div2").innerHTML=suma;
+
+}
+
+
+
+
+
+</script>
+
+</head>
+
+<body>
+
+<div id="div" onmouseover="pokaz()">
+
+</div>
+
+<div id="div2">
+0
+</div>
+
+</body>
+
+</html>
